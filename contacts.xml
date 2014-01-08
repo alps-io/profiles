@@ -1,0 +1,37 @@
+<alps version="1.0">
+    <!--
+      2013-01-07 (mca)
+      Added as a starter example for contributing profiles
+    -->
+    <doc format="text">
+        A list of contacts that also supports search
+    </doc>
+
+    <!-- a hypermedia control for returning contacts -->
+    <descriptor id="search" type="safe" rt="contact">
+        <doc>
+            Simple hypermedia control for getting a list of contacts
+        </doc>
+        <descriptor id="name" type="semantic">
+            <doc>
+                Input for search form
+            </doc>
+        </descriptor>
+    </descriptor>
+
+    <!--  a contact: one or more of these may be returned -->
+    <descriptor id="contact" type="semantic">
+        <doc>
+            Individual Contact
+        </doc>
+        <descriptor id="link" type="safe">
+            <doc>
+                Link to individual contact
+            </doc>
+        </descriptor>
+        <descriptor id="givenName" type="semantic" href="http://schema.org/givenName"/>
+        <descriptor id="familyName" type="semantic" href="http://schema.org/familyName" />
+        <descriptor id="email" type="semantic" href="http://schema.org/email" />
+        <descriptor id="telephone" type="semantic" href="http://schema.org/telephone"/>
+    </descriptor>
+</alps> 
