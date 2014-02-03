@@ -3,9 +3,11 @@
       2013-01-07 (mca)
       Added as a starter example for contributing profiles
     -->
+    <link rel="self" href="https://rawgithub.com/alps-io/profiles/master/contacts.xml" />
     <doc format="text">
         A list of contacts that also supports search
     </doc>
+    
 
     <!-- a hypermedia control for returning contacts -->
     <descriptor id="search" type="safe" rt="contact">
