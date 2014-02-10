@@ -9,9 +9,10 @@
   <descriptor id="title"    type="semantic" />
   <descriptor id="dueDate"  type="semantic" />
   <descriptor id="category" type="semantic" />
+  <descriptor id="owner"    type="semantic" />
   
   <!-- transition elements -->
-  <descriptor id="list"  type="safe" />
+  <descriptor id="list"   type="safe" />
   <descriptor id="search" type="safe" />
   <descriptor id="create" type="unsafe" />
   <descriptor id="update" type="idempotent" />
