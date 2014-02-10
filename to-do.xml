@@ -1,0 +1,21 @@
+<alps version="1.0">
+  <link rel="self" href="https://rawgithub.com/alps-io/profiles/master/to-do.xml" />
+  <doc format="text">
+      Simple "to-do" service. 
+      NOTE: servers decide which data elements are valid in transitions
+  </doc>
+  
+  <!-- data elements -->
+  <descriptor id="title"    type="semantic" />
+  <descriptor id="dueDate"  type="semantic" />
+  <descriptor id="category" type="semantic" />
+  
+  <!-- transition elements -->
+  <descriptor id="list"  type="safe" />
+  <descriptor id="search" type="safe" />
+  <descriptor id="create" type="unsafe" />
+  <descriptor id="update" type="idempotent" />
+  <descriptor id="close"  type="unsafe" />
+  <descriptor id="remove" type="idempotent" />
+    
+</alps>
