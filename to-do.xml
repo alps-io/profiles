@@ -3,8 +3,12 @@
   <doc format="text">
       Author: Mike Amundsen (mca@mamund.com)
 
-      Simple "to-do" service. 
-      NOTE: servers decide which data elements are valid in transitions
+      Simple "to-do" service.
+      
+      Servers MUST decide which data elements are valid in transitions.
+      Clients SHOULD be coded to recognize all of the transition elements including
+      any descriptors that MAY appear as params for the transition even though
+      servers MAY NOT support all the semantic descriptors listed here.
   </doc>
   
   <!-- data elements -->
