@@ -1,0 +1,20 @@
+<alps version="1.0">
+  <doc>
+     Author: Mike Amundsen (mca@mamund.com)
+
+     Simple service to manage category tags
+
+     Servers can support any subset of the transition elements.
+  </doc>
+
+  <!-- data elements -->
+  <descriptor id="category" type="semantic" />
+
+  <!-- tranistion elements -->
+  <descriptor id="list" type="safe" />
+  <descriptor id="search" type="safe" />
+  <descriptor id="create" type="unsafe" />
+  <descriptor id="update" type="idempotent" />
+  <descriptor id="remove" type="idemponent" />
+
+</alps>
