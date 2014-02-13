@@ -4,7 +4,8 @@
 
      Simple service to manage category tags
 
-     Servers can support any subset of the transition elements.
+     Servers SHOULD support the "category" semantic element.
+     Servers MAY support one or more of the transition elements.
   </doc>
 
   <!-- data elements -->
