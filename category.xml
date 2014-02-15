@@ -16,6 +16,6 @@
   <descriptor id="search" type="safe" />
   <descriptor id="create" type="unsafe" />
   <descriptor id="update" type="idempotent" />
-  <descriptor id="remove" type="idemponent" />
+  <descriptor id="remove" type="idempotent" />
 
 </alps>
