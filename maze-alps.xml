@@ -1,0 +1,17 @@
+<alps version="1.0">
+  <link href="http://amundsen.com/media-types/maze/" rel="help" />
+  
+  <!-- semantic descriptors -->
+  <descriptor id="maze" type="safe" def="RFC5988"/>
+  <descriptor id="switch" type="safe" def="RFC5988" />
+  
+  <descriptor id="edit" type="safe" def="http://www.iana.org/assignments/link-relations/"/>
+  <descriptor id="start" type="safe" def="http://www.iana.org/assignments/link-relations/"/>
+  <descriptor id="current" type="safe" def="http://www.iana.org/assignments/link-relations/"/>
+  
+  <descriptor id="exit" type="safe" def="http://microformats.org/wiki/existing-rel-values" />
+  <descriptor id="north" type="safe" def="http://microformats.org/wiki/existing-rel-values" />
+  <descriptor id="south" type="safe" def="http://microformats.org/wiki/existing-rel-values" />
+  <descriptor id="west" type="safe" def="http://microformats.org/wiki/existing-rel-values" />
+  <descriptor id="east" type="safe" def="http://microformats.org/wiki/existing-rel-values" />
+</alps>
