@@ -1,0 +1,29 @@
+<alps version="1.0">
+    <descriptor id="error" type="semantic">
+        <doc>Error Message</doc>
+ 
+        <descriptor id="message" type="semantic">
+            <doc>
+                For expressing a human readable message related to the current error which may be displayed to the user of the api
+            </doc>
+        </descriptor>
+ 
+        <descriptor id="logref" type="semantic">
+            <doc>
+                For expressing an identifier to refer to the specific error on the server side for logging purposes
+            </doc>
+        </descriptor>
+ 
+        <descriptor id="help" type="safe" def="http://www.w3.org/TR/html5/links.html#link-type-help">
+            <doc>
+                Link to a help document describing the error
+            </doc>
+        </descriptor>
+ 
+        <descriptor id="describes" type="safe" def="RFC6892">
+            <doc>
+                Link to another representation of this error
+            </doc>
+        </descriptor>
+    </descriptor>
+</alps>
