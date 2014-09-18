@@ -13,6 +13,12 @@
                 For expressing an identifier to refer to the specific error on the server side for logging purposes
             </doc>
         </descriptor>
+
+        <descriptor id="path" type="semantic" def="http://tools.ietf.org/html/rfc6901">
+            <doc>
+                For expressing a JSON Pointer (RFC6901) to a field in related resource (contained in the 'about' link relation) that for which this error is relevant.
+            </doc>
+        </descriptor>
  
         <descriptor id="help" type="safe" def="http://www.w3.org/TR/html5/links.html#link-type-help">
             <doc>
