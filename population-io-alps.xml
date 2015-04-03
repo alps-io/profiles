@@ -1,0 +1,354 @@
+<alps version="1.0">
+  <doc>
+    This is the World Bank's World Population API.
+  </doc>
+  <link rel="help" href="http://api.population.io/" />
+  <ext id="author">Mike Amundsen</ext>
+  <ext id="date-created">2015-04-03</ext>
+    
+  <!--
+    ***********************
+    data elements
+    ***********************
+  -->
+  <descriptor id="dob" type="semantic">
+    <doc>
+      date string: YYYY-MM-DD
+    </doc>
+  </descriptor>
+  <descriptor id="sex" type="semantic">
+    <doc>
+      Valid values: unisex, male, female
+    </doc>
+  </descriptor>
+  <descriptor id="country" type="semantic">
+    <doc>
+      Valid values: see countries safe transition.
+      use 'world' for all.
+    </doc>
+  </descriptor>
+  <descriptor id="date" type="semantic">
+    <doc>
+      date string: YYYY-MM-DD
+    </doc>
+  </descriptor>
+  <descriptor id="age" type="semantic">
+    <doc>
+      string: NNyNNmNNd
+    </doc>
+  </descriptor>
+  <descriptor id="ago" type="semantic">
+    <doc>
+      years, months, days in past
+      string: NNyNNmNNd
+    </doc>
+  </descriptor>
+  <descriptor id="rank" type="semantic">
+    <doc>
+      digits
+    </doc>
+  </descriptor>
+  <descriptor id="in" type="semantic">
+    <doc>
+      years, months, days in future
+      string: NNyNNmNNd
+    </doc>
+  </descriptor>
+  
+  <descriptor id="offset" type="semantic">
+    <doc>
+      years, months, days offset from ???
+      string: NNyNNmNNd
+    </doc>
+  </descriptor>
+  <descriptor id="date-on-rank" type="semantic">
+    <doc>
+      date string: YYYY-MM-DD
+    </doc>
+  </descriptor>
+  <descriptor id="remaining-life-expectancy-data" type="semantic">
+    <doc>
+      float
+    </doc>
+  </descriptor>
+  <descriptor id="total-life-expectancy-data" type="semantic">
+    <doc>
+      float
+    </doc>
+  </descriptor>
+  <descriptor id="total" type="semantic">
+    <doc>
+      int
+    </doc>
+  </descriptor>
+  <descriptor id="males" type="semantic">
+    <doc>
+      int
+    </doc>
+  </descriptor>
+  <descriptor id="females" type="semantic">
+    <doc>
+      int
+    </doc>
+  </descriptor>
+  <descriptor id="year" type="semantic">
+    <doc>
+      int
+    </doc>
+  </descriptor>
+  <descriptor id="age-int" name="age" type="semantic">
+    <doc>
+      int
+    </doc>
+  </descriptor>
+  <descriptor id="population" type="semantic">
+    <doc>
+      int
+    </doc>
+  </descriptor>
+  <descriptor id="mortality-percent" type="semantic">
+    <doc>
+      float
+    </doc>
+  </descriptor>
+  <descriptor id="detail" type="semantic">
+    <doc>
+      the reason why the request could not be successfully processed
+    </doc>
+  </descriptor>
+  <descriptor id="#countries-data" name="countries" type="semantic">
+    <doc>
+      country
+    </doc>
+  </descriptor>
+
+  <!--
+    ***********************
+    response elements
+    ***********************
+  -->
+  <descriptor id="error-message" type="semantic">
+    <descriptor id="#detail" />
+  </descriptor>
+  
+  <descriptor id="country-list" type="semantic">
+    <descriptor id="#countries-data" />
+  </descriptor>
+  
+  <descriptor id="world-population-rank-today" type="semantic">
+    <descriptor href="#dob" />
+    <descriptor href="#sex" />
+    <descriptor href="#country" />
+    <descriptor href="#rank" />
+  </descriptor>
+  
+  <descriptor id="world-population-rank-by-date" type="semantic">
+    <descriptor href="#dob" />
+    <descriptor href="#sex" />
+    <descriptor href="#country" />
+    <descriptor href="#rank" />
+    <descriptor href="#date" />
+  </descriptor>
+
+  <descriptor id="world-population-rank-by-age" type="semantic">
+    <descriptor href="#dob" />
+    <descriptor href="#sex" />
+    <descriptor href="#country" />
+    <descriptor href="#rank" />
+    <descriptor href="#age" />
+  </descriptor>
+
+  <descriptor id="world-population-rank-with-offset" type="semantic">
+    <descriptor href="#dob" />
+    <descriptor href="#sex" />
+    <descriptor href="#country" />
+    <descriptor href="#rank" />
+    <descriptor href="#offset" />
+  </descriptor>
+  
+  <descriptor id="date-by-world-population-rank" type="semantic">
+    <descriptor href="#dob" />
+    <descriptor href="#sex" />
+    <descriptor href="#country" />
+    <descriptor href="#rank" />
+    <descriptor href="#date-on-rank" />
+  </descriptor>
+
+  <descriptor id="remaining-life-expectancy" type="semantic">
+    <descriptor href="#sex" />
+    <descriptor href="#country" />
+    <descriptor href="#date" />
+    <descriptor href="#age" />
+    <descriptor href="#remaining-life-expectancy-data" name="remaining-life-expectancy" />
+  </descriptor>
+
+  <descriptor id="total-life-expectancy" type="semantic">
+    <descriptor href="#sex" />
+    <descriptor href="#country" />
+    <descriptor href="#dob" />
+    <descriptor href="#total-life-expectancy-data" name="total-life-expectancy" />
+  </descriptor>
+
+  <descriptor id="population-table" type="semantic">
+    <descriptor href="#total" />
+    <descriptor href="#females" />
+    <descriptor href="#males" />
+    <descriptor href="#year" />
+    <descriptor href="#age-int" name="age" />
+  </descriptor>
+
+  <descriptor id="total-population" type="semantic">
+    <descriptor href="#date" />
+    <descriptor href="#population" />
+  </descriptor>
+
+  <descriptor id="mortality-distribution-return" name="mortality-distribution" type="semantic">
+    <descriptor href="#age-int" name="age" />
+    <descriptor href="#mortality-percent" />
+  </descriptor>
+
+  <!--
+    ***********************
+    transitions
+    ***********************
+  -->
+  
+  <!-- countries -->
+  <descriptor id="countries" type="safe" rt="#country-list">
+    <doc>
+      Return a list of all countries in the statistical dataset. These are also the valid input values to the various 'country' parameters across the remaining API.
+    </doc>
+  </descriptor>
+  
+  <!-- populiation ranking -->
+  <descriptor id="wp-rank-today" type="safe" rt="#world-population-rank-today">
+    <doc>
+      Calculates the world population rank of a person with the given date of birth, sex and country of origin as of today.
+    </doc>
+    <descriptor href="#dob" />
+    <descriptor href="#sex" />
+    <descriptor href="#country" />
+  </descriptor>
+  
+  <descriptor id="wp-rank-on" type="safe" rt="#world-population-rank-today">
+    <doc>
+      Calculates the world population rank of a person with the given date of birth, sex and country of origin on a certain date.
+    </doc>
+    <descriptor href="#dob" />
+    <descriptor href="#sex" />
+    <descriptor href="#country" />
+    <descriptor href="#date" />
+  </descriptor>
+
+  <descriptor id="wp-rank-aged" type="safe" rt="#world-population-rank-by-age">
+    <doc>
+      Calculates the world population rank of a person with the given date of birth, sex and country of origin on a certain date.
+    </doc>
+    <descriptor href="#dob" />
+    <descriptor href="#sex" />
+    <descriptor href="#country" />
+    <descriptor href="#age" />
+  </descriptor>
+
+  <descriptor id="wp-rank-ago" type="safe" rt="#world-population-rank-with-offset">
+    <doc>
+      Calculates the world population rank of a person with the given date of birth, sex and country of origin on a certain date.
+    </doc>
+    <descriptor href="#dob" />
+    <descriptor href="#sex" />
+    <descriptor href="#country" />
+    <descriptor href="#ago" />
+  </descriptor>
+  
+  <descriptor id="wp-rank-in" type="safe" rt="#world-population-rank-with-offset">
+    <doc>
+      Calculates the world population rank of a person with the given date of birth, sex and country of origin on a certain date.
+    </doc>
+    <descriptor href="#dob" />
+    <descriptor href="#sex" />
+    <descriptor href="#country" />
+    <descriptor href="#in" />
+  </descriptor>
+
+  <descriptor id="wp-rank-in" type="safe" rt="#date-by-world-population-rank">
+    <doc>
+      Calculates the world population rank of a person with the given date of birth, sex and country of origin on a certain date.
+    </doc>
+    <descriptor href="#dob" />
+    <descriptor href="#sex" />
+    <descriptor href="#country" />
+    <descriptor href="#rank" />
+  </descriptor>
+
+  <!-- life-expectancy -->
+  <descriptor id="life-expectancy-remaining" type="safe" rt="#remaining-life-expectancy">
+    <doc>
+      Calculate remaining life expectancy of a person with given sex, country, and age at a given point in time.
+    </doc>
+    <descriptor href="#sex" />
+    <descriptor href="#country" />
+    <descriptor href="#date" />
+    <descriptor href="#age" />
+  </descriptor>
+
+  <descriptor id="life-expectancy-remaining-total" type="safe" rt="#total-life-expectancy">
+    <doc>
+      Calculate total life expectancy of a person with given sex, country, and date of birth.
+    </doc>
+    <descriptor href="#sex" />
+    <descriptor href="#country" />
+    <descriptor href="#dob" />
+  </descriptor>
+
+  <!-- population -->
+  <descriptor id="population-year-country-age" type="safe" rt="#population-table">
+    <doc>
+      Retrieve population table for a specific age group in the given year and country.
+    </doc>
+    <descriptor href="#year" />
+    <descriptor href="#country" />
+    <descriptor href="#age" />
+  </descriptor>
+
+  <descriptor id="population-year-country" type="safe" rt="#population-table">
+    <doc>
+      Retrieve population tables for a given year and country. Returns tables for all ages from 0 to 100.
+    </doc>
+    <descriptor href="#year" />
+    <descriptor href="#country" />
+  </descriptor>
+
+  <descriptor id="population-country-age" type="safe" rt="#population-table">
+    <doc>
+      Retrieve population tables for a specific age group in the given country. Returns tables for all years from 1950 to 2100.
+    </doc>
+    <descriptor href="#country" />
+    <descriptor href="#age" />
+  </descriptor>
+
+  <descriptor id="population-country-date" type="safe" rt="#population-table">
+    <doc>
+      Determines total population for a given country on a given date. Valid dates are 2013-01-01 to 2022-12-31.
+    </doc>
+    <descriptor href="#country" />
+    <descriptor href="#date" />
+  </descriptor>
+
+  <descriptor id="population-today-tomorrow" type="safe" rt="#total-population">
+    <doc>
+      Determines total population for a given country on a given date. Valid dates are 2013-01-01 to 2022-12-31.
+    </doc>
+    <descriptor href="#country" />
+  </descriptor>
+
+  <!-- mortality -->
+  <descriptor id="mortality-distribution" type="safe" rt="#mortality-distribution-return">
+    <doc>
+      Retrieves the mortality distribution tables for the given country, sex and age.
+    </doc>
+    <descriptor href="#country" />
+    <descriptor href="#sex" />
+    <descriptor href="#age" />
+  </descriptor>
+
+</alps>
