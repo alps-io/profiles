@@ -1,0 +1,63 @@
+<alps version="1.0">
+  <link rel="help" href="http://deckofcardsapi.com" />
+  <doc>
+    ALPS document for the deckofcardsapi.com API
+  </doc>
+  
+  <!-- data elements -->
+  <descriptor id="success" type="semantic"  />
+  <descriptor id="deck_count" name="count" type="semantic" />
+  <descriptor id="deck_id" type="semantic" />
+  <descriptor id="remaining" type="semantic" />
+  <descriptor id="image" type="semantic" />
+  <descriptor id="suit" type="semantic" />
+  <descriptor id="value" type="semantic" />
+  
+  <!-- resonses -->
+  <descriptor id="deck" type="semantic">
+    <descriptor href="#success" />
+    <descriptor href="#deck_id" />
+    <descriptpr href="remaining" />
+  </descriptor>
+  
+  <descriptor id="card" type="semantic">
+    <descriptor href="#image" />
+    <descriptor href="#value" />
+    <descriptor href="suit" />
+  </descriptor>
+  
+  <descriptor id="cards" type="semantic">
+    <descriptor href="#deck" />
+    <descriptor href="#card" />
+  </descriptor>
+  
+  <!-- actions -->
+  <descriptor id="shuffle" type="unsafe" rt="deck">
+    <doc>
+      Add deck_count as a parameter to define the number of Decks you want to use. 
+      Blackjack typically uses 6 decks. The default is 1.
+    </doc>
+    <descriptor href="#deck_count" />
+  </descriptor>
+  
+  <descriptor id="draw" type="unsafe" rt="cards">
+    <doc>
+      The count variable defines how many cards to draw from the deck. Be sure to 
+      replace deck_id with a valid deck_id. We use the deck_id as an identifier so we 
+      know who is playing with what deck. After two weeks, if no actions have been 
+      made on the deck then we throw it away.
+    </doc>
+    <descriptor href="#deck_id" />
+    <descriptor href="card_count" />
+  </descriptor>
+  
+  <descriptor id="reshuffle" type="unsafe" rt="deck">
+    <doc>
+      Don't throw away a deck when all you want to do is shuffle. Include the 
+      deck_id on your call to shuffle your cards. Don't worry about reminding 
+      us how many decks you are playing with.
+    </doc>
+    <descriptor href="#deck_id" />
+  </descriptor>
+  
+</alps>
