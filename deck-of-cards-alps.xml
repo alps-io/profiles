@@ -7,6 +7,7 @@
   <!-- data elements -->
   <descriptor id="success" type="semantic"  />
   <descriptor id="deck_count" name="count" type="semantic" />
+  <descriptor id="card_count" name="count" type="semantic" />
   <descriptor id="deck_id" type="semantic" />
   <descriptor id="remaining" type="semantic" />
   <descriptor id="image" type="semantic" />
@@ -17,13 +18,13 @@
   <descriptor id="deck" type="semantic">
     <descriptor href="#success" />
     <descriptor href="#deck_id" />
-    <descriptpr href="remaining" />
+    <descriptpr href="#remaining" />
   </descriptor>
   
   <descriptor id="card" type="semantic">
     <descriptor href="#image" />
     <descriptor href="#value" />
-    <descriptor href="suit" />
+    <descriptor href="#suit" />
   </descriptor>
   
   <descriptor id="cards" type="semantic">
@@ -48,7 +49,7 @@
       made on the deck then we throw it away.
     </doc>
     <descriptor href="#deck_id" />
-    <descriptor href="card_count" />
+    <descriptor href="#card_count" />
   </descriptor>
   
   <descriptor id="reshuffle" type="unsafe" rt="deck">
