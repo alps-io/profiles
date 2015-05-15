@@ -1,0 +1,53 @@
+<alps version="1.0">
+  <link rel="help" href="http://roll.space/" />
+  <doc>
+    ALPS document for existing "Roll Dice as a Service" API
+    (see URL in the help link for native API service).
+    "Have you ever needed to roll dice and have no dice? 
+      Do you need to automate the rolling of dice? 
+      Do you need some time to kill? I obviously did."
+  </doc>
+
+  <!-- data elements -->
+  <descriptor id="dice" type="semantic">
+    <doc>
+      Identfier for a die. This value is created by the consumer app
+      and has a very specific non-opaque format:
+         NdP where:
+         - N is an integer indicating the number of rolls to execute
+         - d is a fixed constant
+         - P is an integer indicating the max number of "pips" or dots on a single side
+    </doc>
+  </decriptor>
+  <descriptor id="sum" type="semantic">
+    <doc>
+      Sum total of adding the value of all the rolls of the die
+    </doc>
+  </descriptor>
+  <descriptor id="rolls" type="semantic">
+    <doc>
+      An array of integers indicating the value assigned to each roll of the die
+    </doc>
+  </descriptor>
+
+  <!-- return values -->
+  <descriptor id="results" type="semantic">
+    <doc>
+      Service MAY return one or more "results" blocks.
+    </doc>
+    <descriptor href="#dice">
+      <descriptor href="#sum" />
+      <descriptor href="#rolls" />
+    </decriptor>
+  </descriptor>
+  
+  <!-- action elements -->
+  <descriptor id="role-dice" type="safe" rt="results">
+    <descriptor href="#dice">
+      <doc>
+        Client apps MAY pass one or more "dice" values.
+      </doc>
+    </descriptor>
+  </descriptor>
+  
+</alps>
