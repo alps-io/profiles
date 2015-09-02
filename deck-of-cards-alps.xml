@@ -5,29 +5,54 @@
   </doc>
   
   <!-- data elements -->
-  <descriptor id="success" type="semantic"  />
-  <descriptor id="deck_count" name="count" type="semantic" />
-  <descriptor id="card_count" name="count" type="semantic" />
-  <descriptor id="deck_id" type="semantic" />
-  <descriptor id="remaining" type="semantic" />
-  <descriptor id="image" type="semantic" />
-  <descriptor id="suit" type="semantic" />
-  <descriptor id="value" type="semantic" />
+  <descriptor id="success" type="semantic">
+    <doc> returns true or false</doc>
+  </descriptor>
+  <descriptor id="deck_count" name="count" type="semantic">
+    <doc>Number of decks you want to use</doc>
+  </descriptor>
+  <descriptor id="card_count" name="count" type="semantic">
+    <doc>How many cards to draw from the deck</doc>
+  </descriptor>
+  <descriptor id="deck_id" type="semantic">
+    <doc>An identifier so we know who is playing with what deck</doc>
+  </descriptor>
+  <descriptor id="remaining" type="semantic">
+    <doc>Number of cards still unselected in the deck</doc>
+  </descriptor>
+  <descriptor id="image" type="semantic">
+    <doc>image to render a single card</doc>
+  </descriptor>
+  <descriptor id="suit" type="semantic">
+    <doc>The suit, one of S (Spades), D (Diamonds), C (Clubs), or H (Hearts)</doc>
+  </descriptor>
+  <descriptor id="value" type="semantic">
+    <doc>The value, one of A (for an ace), 2, 3, 4, 5, 6, 7, 8, 9, 0 (for a ten), J (jack), Q (queen), or K (king)</doc>
+  </descriptor>
   
   <!-- resonses -->
   <descriptor id="deck" type="semantic">
+    <doc>
+      Response container for #deck actions
+    </doc>
     <descriptor href="#success" />
     <descriptor href="#deck_id" />
     <descriptpr href="#remaining" />
   </descriptor>
   
   <descriptor id="card" type="semantic">
+    <doc>
+      Response container for single #card actions
+    </doc>
     <descriptor href="#image" />
     <descriptor href="#value" />
     <descriptor href="#suit" />
   </descriptor>
   
   <descriptor id="cards" type="semantic">
+    <doc>
+      Response container for multiple #cards actions
+    </doc>
     <descriptor href="#deck" />
     <descriptor href="#card" />
   </descriptor>
