@@ -1,0 +1,5 @@
+<alps>
+  <doc>Yandex OGP Extension semantics</doc>
+  <descriptor id="interaction" type="safe" />
+  <descriptor id="type" type="semantic" src="http://help.yandex.com/webmaster/id/1127950/#actions"/>
+</alps>

@@ -1,0 +1,63 @@
+<alps version="1.0">
+  <doc>DWBP API Documentation</doc>
+  <link rel="help" href="https://www.w3.org/TR/dwbp/dwbp-api-example.html" />
+  
+  <!-- actions -->
+  <descriptor id="all-routes" type="safe" rt="routes"/>
+  <descriptor id="all-stops" type="safe" rt="stops"/>
+  <descriptor id="route-stops" type="safe" rt="results" />
+  <descriptor id="realtime-stops" type="safe" rt="realtime-results"/>
+  
+  <!-- containers -->
+  <descriptor id="routes_container" name="routes" type="semantic">
+    <descriptor href="#id" />
+    <descriptor href="#uri" />
+  </descriptor>
+  
+  <descriptor id="results" type="semantic">
+    <descriptor href="#route" />
+  </descriptor>
+
+  <descriptor id="route" type="semantic">
+    <descriptor href="#route_id" name="route"/>
+    <descriptor href="#stops" />
+  </descriptor>
+  
+  <descriptor id="stops" type="semantic">
+    <descriptor href="#stop_id" />
+    <descriptor href="#stop_name" />
+    <descriptor href="#stop_desc" />
+    <descriptor href="#stop_lat" />
+    <descriptor href="#stop_long" />
+    <descriptor href="#stop_url" />
+    <descriptor href="#zone_id" />
+  </descriptor>
+  
+  <descriptor id="realtime-results" name="results" type="semantic">
+    <descriptor href="#id" />
+    <descriptor href="#uri" />
+    <descriptor href="#timestamp" />
+    <descriptor href="#realtime" />
+  </descriptor>
+  
+  <descriptor id="realtime" type="semantic">
+    <descriptor id="#realtime-route" name="route" />
+    <descriptor id="#duetime" />
+  </descriptor>
+  
+  <!-- root elements -->
+  <descriptor id="route_id" type="semantic" />
+  <descriptor id="id" type="semantic" />
+  <descriptor id="uri" type="semantic" />
+  <descriptor id="stop_id" type="semantic" />
+  <descriptor id="stop_name" type="semantic" />
+  <descriptor id="stop_desc" type="semantic" />
+  <descriptor id="stop_lat" type="semantic" />
+  <descriptor id="stop_long" type="semantic" />
+  <descriptor id="stop_url" type="semantic" />
+  <descriptor id="zone_id" type="semantic" />
+  <descriptor id="timestamp" type="semantic" />
+  <descriptor id="realtime-route" type="semantic" />
+  <descriptor id="duetime" type="semantic" />
+  
+</alps>

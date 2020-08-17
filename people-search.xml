@@ -1,0 +1,33 @@
+<alps version="1.0">
+  <link rel="self" href="https://rawgit.com/mamund/9ed1614903f5bddec660/raw/b5e5d0f7250ca5af4169e369036289e52fd6f290/people-search.xml" />
+  <link rel="help" href="https://developers.google.com/+/api/latest/people/search" />
+  <doc type="text">
+    Search all public profiles. Try it now or see an example.
+
+    For large result sets, results are paginated. For the most up-to-date search results, 
+    do not use a pageToken older than five minutes. Instead, restart pagination by 
+    repeating the original request (omitting pageToken). 
+  </doc>
+
+  <!-- semantic descriptors -->
+  <descriptor id="kind" type="semantic" />
+  <descriptor id="selfLink" type="semantic" />
+  <descriptor id="title" type="semantic" />
+  <descriptor id="nextPageToken" type="semantic" />
+  <descriptor id="items" type="semantic" />
+  <descriptor id="etag" type="semantic" />
+  <descriptor id="totalItems" type="semantic" />
+  <descriptor id="query" type="semantic" />
+  <descriptor id="language" type="semantic" />
+  <descriptor id="maxResults" type="semantic" />
+  <descriptor id="pageToken" type="semantic" />
+  
+  <!-- transition descriptors -->
+  <descriptor id="search" type="safe">
+    <descriptor href="#query" />
+    <descriptor href="#language" />
+    <descriptor href="#maxResults" />
+    <descriptor href="#pageToken" />
+  </descriptor>
+
+</alps>

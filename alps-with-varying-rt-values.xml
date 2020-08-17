@@ -1,0 +1,52 @@
+<alps>
+  <doc>varying values for @rt</doc>
+  
+  <!-- data -->
+  <descriptor id="value" type="semantic" />
+  <descriptor id="title" type="semantic" />
+  <descriptor id="id" type="semantic" />
+  <descriptor id="code" type="semantic" />
+  <descriptor id="url" type="semantic" />
+  <descriptor id="waitsec" type="semantic" />
+  
+  <!-- actions -->
+  <descriptor id="send-message" type="idempotent" rt="return-body">
+    <descriptor href="#send-body" />
+  </descriptor>
+  
+  <!-- containers -->
+  <descriptor id="send-body">
+    <descriptor href="#value" />
+    <descriptor href="#url" name="destination" />
+  </descriptor>
+  
+  <descriptor id="return-body">
+    <descriptor href="#success" />
+    <descriptor href="#pending" />
+    <descriptor href="#error" />
+  </descriptor>
+  
+  <descriptor id="success">
+    <descriptor href="#title" />
+    <descriptor href="#id" />
+    <descriptor href="#code" name="success-code"/>
+    <descriptor href="#url" name="read"/>
+  </descriptor>
+  
+  <descriptor id="pending">
+    <descriptor href="#title" />
+    <descriptor href="#code" name="status-code" />
+    <descriptor href="#url" name="status-check" />
+    <descriptor href="#waitsec" />
+  </descriptor>
+  
+  <descriptor id="error">
+    <descriptor href="#title" />
+    <descriptor href="#code" name="error-code" />
+    <descriptor href="#url" name="retry" />
+  </descriptor>
+  
+</alps>
+
+
+

@@ -1,0 +1,54 @@
+<alps version="1.0">
+  <doc>Issue tracking profile</doc>
+  
+  <!-- data vocabulary -->
+  <descriptor id="id" type="semantic"/>
+  <descriptor id="title" type="semantic"/>
+  <descriptor id="description" type="semantic"/>
+  <descriptor id="status" type="semantic"/>
+  <descriptor id="action" type="semantic"/>
+  <descriptor id="search-text" type="semantic"/>
+  
+  <!-- data containers -->
+  <descriptor id="issue" type="semantic">
+    <descriptor href="#id"/>
+    <descriptor href="#title"/>
+    <descriptor href="#description"/>
+    <descriptor href="#status"/>
+  </descriptor>
+  
+  <!-- transitions -->
+  <descriptor id="self-collection" type="safe" name="self" rt="#issue"/>
+  <descriptor id="self-item" type="safe" name="item" rt="#issue"/>
+  <descriptor id="read"  type="safe" name="item" rt="#issue"/>
+  <descriptor id="search" type="safe" rt="#issue">
+    <descriptor href="#search-text"/>
+  </descriptor>
+  
+  <descriptor id="open" type="unsafe" name="process">
+    <descriptor href="#action"/>
+  </descriptor>
+  
+  <descriptor id="close" type="unsafe" name="process">
+    <descriptor href="#action"/>
+  </descriptor>
+  
+  <descriptor id="transition" type="unsafe" name="process">
+    <descriptor href="#action"/>
+  </descriptor>
+  
+  <descriptor id="create" type="unsafe">
+    <descriptor href="#title"/>
+    <descriptor href="#description"/>
+    <descriptor href="#status"/>
+  </descriptor>
+  
+  <descriptor id="update" type="idempotent">
+    <descriptor href="#title"/>
+    <descriptor href="#description"/>
+    <descriptor href="#status"/>
+  </descriptor>
+  
+  <descriptor id="delete" type="idempotent" />
+
+</alps>

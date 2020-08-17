@@ -1,0 +1,23 @@
+<alps>
+  <doc>Simple Banking Example</doc>
+  <!-- actions -->
+  <descriptor id="getList" type="safe" />
+  <descriptor id="getStatus" type="safe" />
+  <descriptor id="updateStatus" type="idempotent">
+    <descriptor href="#accountId" />
+    <descriptor href="#actionStatus" />
+  </descriptor>
+  <descriptor id="updatePreferences" type="idempotent">
+    <descriptor href="#accountId" />
+    <descriptor href="#preference" />
+  </descriptor>
+  <!-- structures -->
+  <descriptor id="preference" type="semantic">
+    <descriptor href="#idenfitier" />
+    <descriptor href="#value" />
+    <descriptor href="#name" />
+  </descriptor>
+  
+  <!-- data -->
+  
+</alps>

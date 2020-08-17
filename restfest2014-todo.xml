@@ -1,0 +1,41 @@
+<alps version="1.0">
+  <link rel="help" href="https://github.com/RESTFest/2014-Greenville/wiki/Hack%20Day" />
+
+  <!-- semantic descriptors (data elements) -->
+  <descriptor id="todoid" type="semantic" />
+  <descriptor id="todoTitle" type="semantic" />
+  <descriptor id="todoDateDue" type="semantic" />
+  <descriptor id="todoNotes" type="semantic" />
+  <descriptor id="categoryid" type="semantic" />
+  <descriptor id="categoryTitle" type="semantic" />
+  <descriptor id="userid" type="semantic" />
+  <descriptor id="dateCreated" type="semantic" />
+  <descriptor id="dateUpdated" type="semantic" />
+  <descriptor id="userName" type="semantic" />
+  <descriptor id="userPassword" type="semantic" />
+  <descriptor id="givenName" type="semantic" />
+  <descriptor id="familyName" type="semantic" />
+  <descriptor id="avatarUrl" type="semantic" />
+  <descriptor id="userUrl" type="semantic" />
+  
+  <!-- action descriptors (things to do) -->
+  <descriptor id="todoCreate" type="unsafe" />
+  <descriptor id="todoList" type="safe" />
+  <descriptor id="todoRead" type="safe" />
+  <descriptor id="todoComplete" type="idempotent"/>
+  <descriptor id="todoEdit" type="idempotent" />
+  <descriptor id="todoEditDateDue" type="idempotent" />
+  <descriptor id="todoDelete" type="idempotent" />
+  <descriptor id="todoSend" type="idempotent" />
+  <descriptor id="categoryCreate" type="unsafe" />
+  <descriptor id="categoryList" type="safe" />
+  <descriptor id="categoryRead" type="safe" />
+  <descriptor id="categoryCreate" type="unsafe" />
+  <descriptor id="categoryEdit" type="idempotent" />
+  <descriptor id="categoryDelete" type="idempotent" />
+  <descriptor id="userCreate" type="unsafe" />
+  <descriptor id="userEdit" type="idempotent" />
+  <descriptor id="userDelete" type="idempotent" />
+  <descriptor id="xx" type="idempotent" />
+
+</alps>

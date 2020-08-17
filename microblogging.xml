@@ -1,0 +1,114 @@
+<alps>
+  <doc>
+    The example profile here contains details on customizing any representation media type for a specific 
+    application domain: Micro-blogging. It contains descriptions of valid data and transition values that 
+    can appear within resource representations. This document is presented as a complete blueprint for 
+    implementing a compliant client or server that supports the basic features of the target application 
+    domain (Micro-blogging).
+  </doc>
+  <link rel="help" href="http://amundsen.com/hypermedia/profiles/" />
+  
+  <!-- data elements -->
+  <descriptor id="date-time" type="semantic">
+    <doc>
+      Contains the UTC date-time the message was posted. When present, it SHOULD be valid per RFC3339.
+    </doc>
+  </descriptor>
+
+  <descriptor id="description" type="semantic">
+    <doc>
+      Contains the text description of a user.
+    </doc>
+  </descriptor>
+
+  <descriptor id="xx" type="semantic">
+    <doc>
+      
+    </doc>
+  </descriptor>
+
+
+  <!-- containers -->
+  <descriptor id="all" type="semantic">
+    <doc>
+      A list representation of unfiltered results. 
+    </doc>
+    <descriptor href="#users" />
+    <descriptor href="#messages" />
+  </descriptor>
+  
+  <descriptor id="friends" type="semantic">
+    <doc>
+      A list representation.
+    </doc>
+    <descriptor href="#users" />
+    <descriptor href="#messages" />
+  </descriptor>
+
+  <descriptor id="followers" type="semantic">
+    <doc>
+      A list representation of all the users from the designated user's friends list.
+    </doc>
+    <descriptor href="#users" />
+  </descriptor>
+
+  <descriptor id="me" type="semantic">
+    <doc>
+      Contains the list of messages posted by the designated user or contains
+      the designated user's profile.
+    </doc>
+    <descriptor href="#users" />
+    <descriptor href="#messages" />
+  </descriptor>
+
+  <descriptor id="mentions" type="semantic">
+    <doc>
+      A list representation of all the messages that mention the designated user
+    </doc>
+    <descriptor href="#messages" />
+  </descriptor>
+
+  <descriptor id="message" type="semantic">
+    <doc>
+      A representation of a single message.
+    </doc>
+    <descriptor href="#user-text" />
+    <descriptor href="#user-link" />
+    <descriptor href="#message-text" />
+    <descriptor href="#message-link" />
+    <descriptor href="#user-image" />
+    <descriptor href="#date-time" />
+  </descriptor>
+
+  <!-- transitions -->
+  <descriptor id="message-post" type="unsafe">
+    <doc>
+      A link template to add a new message to the system by the designated (logged-in) user.
+    </doc>
+    <descriptor href="#message-text" />
+  </descriptor>
+  
+  <descriptor id="message-reply" type="unsafe">
+    <doc>
+      A link template to reply to an existing message.
+    </doc>
+    <descriptor href="#user-text" name="user">
+      <doc>
+        the author of the post to be replied-to
+      </doc>
+    </descriptor>
+    <descriptor href="#message-text" name="message"/>
+  </descriptor>
+  
+  <descriptor id="xx" type="semantic">
+    <doc>
+      
+    </doc>
+  </descriptor>
+  
+  
+</alps>
+
+
+
+

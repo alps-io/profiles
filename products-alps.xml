@@ -1,0 +1,55 @@
+<alps version="1.0">
+  <link rel="help" href="http://example.org/documentation/products.html" />
+  <doc>
+    This is a prototype product API.
+  </doc>
+  
+  <!-- transitions -->
+  <descriptor id="item" type="safe" rt="#product">
+    <doc>Retrieve A Single Product</doc>
+  </descriptor>
+  
+  <descriptor id="collection" type="safe" rt="#product">
+    <doc>Provides access to all products</doc>
+  </descriptor>
+  
+  <descriptor id="search" type="safe" rt="#product">
+    <doc>Provides access to all products</doc>
+    <descriptor href="#id" />
+  </descriptor>
+  
+  <descriptor id="edit" type="idempotent" rt="#product">
+    <doc>Updates A Product</doc>
+    <descriptor href="#product" />
+  </descriptor>
+  
+  <descriptor id="create" type="unsafe" rt="#product">
+    <doc>Allows the creation of a new product</doc>
+    <descriptor href="#product" />
+  </descriptor>
+  
+  <descriptor id="delete" type="idempotent">
+    <doc>Delete A Product </doc>
+  </descriptor>
+  
+  <!-- product -->
+  <descriptor id="product" type="semantic">
+    <descriptor id="id" />
+    <descriptor id="name" />
+    <descriptor id="description" />
+    <descriptor id="url" />
+    <descriptor id="thumbnailUrl" />
+    <descriptor id="keywords" />
+    <descriptor id="brand" />
+    <descriptor id="color" />
+    <descriptor id="itemCondition" />
+    <descriptor id="manufacturer" />
+    <descriptor id="model" />
+    <descriptor id="sku" />
+    <descriptor id="weight" />
+    <descriptor id="width" />
+    <descriptor id="height" />
+    <descriptor id="depth" />
+  </descriptor>
+  
+</alps>

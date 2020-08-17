@@ -1,0 +1,26 @@
+<alps>
+  <doc>Sample Gist</doc>
+  
+  <!-- data -->
+  <descriptor id="text" type="semantic" hint="search parameter" />
+  <descriptor id="docid" type="semantic" hint="document id number" />
+  <descriptor id="docurl" type="semantic" hint="document URL" />
+  <descriptor id="summary" type="semantic" hint="content summary" />
+  <descriptor id="pubdate" type="semantic" hint="date published" />
+  <descriptor id="archivedate" type="semantic" hint="date added to archive" />
+  
+  <!-- actions -->
+  <descriptor id="search" type="safe" rt="results">
+    <descriptor href="#text" />
+  </descriptor>
+  
+  <!-- containers -->
+  <descriptor id="results">
+    <descriptor href="#docid" />
+    <descriptor href="#docurl" />
+    <descriptor href="#summary" />
+    <descriptor href="#pubdate" />
+    <descriptor href="#archivedate" />
+  </descriptor>
+    
+</alps>

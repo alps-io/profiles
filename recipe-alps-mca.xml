@@ -1,0 +1,51 @@
+<alps version="1.0">
+
+  <!-- base elements -->
+  <descriptor id="name" type="semantic" rt="http://alps.io/schema.org/Text">
+    <doc format="html">The name of the ingredient, e.g. "flour"</doc>
+  </descriptor>
+  <descriptor id="unit" type="semantic" rt="http://alps.io/schema.org/Text">
+    <doc format="html">Unit, e.g. kilogram or millilitre</doc>
+  </descriptor>
+  <descriptor id="quantity" type="semantic" rt="http://alps.io/schema.org/Number">
+    <doc format="html">Quantity, e.g. 42</doc>
+  </descriptor>
+
+  <!-- containers -->
+  <descriptor id="amount" type="semantic">
+    <doc format="html">Describes how much of the ingredient is to be used</doc>
+    <descriptor href="#unit" />
+    <descriptor href="#quantity" />
+  </descriptor>
+
+  <descriptor id="ingredient" type="semantic">
+    <doc format="html">An ingredient of a cooking receipt</doc>
+    <descriptor href="#name" />
+    <descriptor href="#amount" />
+  </descriptor>
+	
+  <descriptor id="ingredient-list" type="semantic">
+    <doc format="html">A list of ingredients</doc>
+    <descriptor href="#ingredient" />
+  </descriptor>
+
+  <!-- transitions -->
+  <descriptor id="item" type="safe" rt="#ingredient" rel="item">
+    <doc format="html">Returns a single ingredient from the list</doc>
+  </descriptor>
+  <descriptor id="list" type="safe" rt="#ingredient-list" rel="collection">
+    <doc format="html">Returns a list of ingredients</doc>
+  </descriptor>
+  
+  <descriptor id="replace" type="idempotent">
+    <doc format="html">Updates the ingredient</doc>
+  </descriptor>
+  <descriptor id="delete" type="idempotent">
+    <doc format="html">Deletes the ingredient and removes it from the list</doc>
+  </descriptor>
+  <descriptor id="append" type="unsafe">
+    <doc format="html">Creates a new ingredient and adds it to this list</doc>
+    <descriptor href="#ingredient" /> 
+  </descriptor>	
+  
+</alps>

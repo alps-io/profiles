@@ -1,0 +1,19 @@
+<alps version="1.0">
+  <doc>A suggested ALPS profile for the popular MVCTodo project</doc>
+  <link rel="help" href="https://github.com/tastejs/todomvc/blob/master/app-spec.md" />
+  
+  <!-- data elements -->
+  <descriptor id="id" type="semantic" />
+  <descriptor id="title" type="semantic" />
+  <descriptor id="completed" type="semantic" />
+  
+  <!-- action elements -->
+  <descriptor id="listAll" type="safe" />
+  <descriptor id="listActive" type="safe" />
+  <descriptor id="listCompleted" type="safe" />
+  <descriptor id="add" type="unsafe" />
+  <descriptor id="edit" type="idempotent" />
+  <descriptor id="remove" type="idempotent" />
+  <descriptor id="markCompleted" type="idempotent" />
+  <descriptor id="clearCompleted" type="idempotent" />
+</alps>

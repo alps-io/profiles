@@ -1,0 +1,36 @@
+<alps>
+  <doc>Sample Service</doc>
+
+  <!-- properties -->
+  <descriptor id="identifier" def="https://schema.org/identifier" />
+  <descriptor id="givenName" def="https://schema.org/givenName" />
+  <descriptor id="familyName" def="https://schema.org/familyName" />
+  <descriptor id="status" def="https://schema.org/status" />
+  <descriptor id="dateCreated" def="https://schema.org/dateCreated" />
+  <descriptor id="dateModified" def="https://schema.org/dateModified" />
+
+  <!-- actions -->
+  <descriptor id="collection" type="safe" rt="#record" 
+    def="https://tools.ietf.org/html/rfc6573#section-2.2" />
+  <descriptor id="item" type="safe" rt="#record"
+    def="https://tools.ietf.org/html/rfc6573#section-2.1" />
+  <descriptor id="search" type="safe" rt="#record"
+     def="https://www.iana.org/assignments/link-relations/link-relations.xhtml" />
+  <descriptor id="create-form" type="unsafe" rt="#record" 
+    def="https://tools.ietf.org/html/rfc6861#section-3.1" />
+  <descriptor id="edit-form" type="idempotent" rt="#record" 
+    def="https://tools.ietf.org/html/rfc6861#section-3.2" />
+  <descriptor id="remove" type="idempotent" rt="#record"
+    def="http://rels.amundsen.com/remove" />
+
+  <!-- containers -->
+  <descriptor id="record">
+    <descriptor href="#identifier" />
+    <descriptor href="#givenName" />
+    <descriptor href="#familyName" />
+    <descriptor href="#status" />
+    <descriptor href="#dateCreated"  />
+    <descriptor href="#dateModified" />
+  </descriptor>
+  
+</alps>

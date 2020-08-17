@@ -1,0 +1,85 @@
+<alps>
+  <link rel="profile" href="https://gist.github.com/mamund/f5ad7ebf2aa0833ceb89" />
+  <doc>
+    An example of a highly-constrained ALPS profile. One that leaves very
+    few choices to implementors. I don't recommend this kind of profile
+    design since the aesthetics of ALPS is to create profiles that focus
+    on the problem and allow creative people to design their own solutions
+    with that problem space.  - @mamund
+  </doc>
+  
+  <!-- data elements -->
+  <descriptor id="givenName"  />
+  <descriptor id="familyName" />
+  <descriptor id="nickName" />
+  <descriptor id="email" />
+  <descriptor id="lastUpdated" />
+  <descriptor id="statusMessage" />
+
+  <!-- containers -->
+  <descriptor id="fullUser">
+    <descriptor href="#givenName" />
+    <descriptor href="#familyName" />
+    <descriptor href="#nickName" />
+    <descriptor href="#email" />
+  </descriptor>
+  
+  <descriptor id="listUser">
+    <descriptor href="#nickName" />
+  </descriptor>
+  
+  <descriptor id="briefUser">
+    <descriptor href="#givenName" />
+    <descriptor href="#familyName" />
+  </descriptor>
+  
+  <descriptor id="createdUser">
+    <descriptor href="#nickName" />
+    <descriptor href="#statusMessage" />
+  </descriptor>
+  
+  <descriptor id="updatedUser">
+    <descriptor href="#fullUser" />
+    <descriptor href="#lastUpdated" />
+    <descriptor href="#statusMessage" />
+  </descriptor>
+  
+  <descriptor id="deletedUser">
+    <descriptor href="#statusMessage" />
+  </descriptor>
+  
+  <descriptor id="searchUser">
+    <descriptor href="#fullUser" />
+    <descriptor href="#lastUpdated" />
+  </descriptor>
+  
+  <descriptor id="editableUser">
+    <descriptor href="#fullUser" />
+    <descriptor id="userUpdate" type="idempotent" rt="#updatedUser">
+      <descriptor href="#fullUser" />
+    </descriptor>
+    <descriptor id="userDelete" type="idempotent" rt="#deletedUser">
+      <descriptor href="#nickName" />
+    </descriptor>
+  </descriptor>
+
+  <!-- tranistions -->
+  <descriptor id="userList" type="safe" rt="listUser">
+    <descriptor id="filterByNickName" type="safe" rt="searchUser">
+      <descriptor href="#nickname" />
+    </descriptor>
+    <descriptor id="filterByFamilyName" type="safe" rt="searchUser">
+      <descriptor href="#familyName" />
+    </descriptor>
+    <descriptor id="filterByGivenName" type="safe" rt="searchUser">
+      <descriptor href="#familyName" />
+    </descriptor>
+    <descriptor id="userRead" type="safe" rt="editableUser">
+      <descriptor href="#nickName" />
+    </descriptor>
+    <descriptor id="userCreate" type="unsafe" rt="createdUser">
+      <descriptor href="#editableUser" />
+    </descriptor>
+  </descriptor>
+  
+</alps>
