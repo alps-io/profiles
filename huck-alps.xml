@@ -1,0 +1,96 @@
+<alps version="1.0">
+    <doc>Hypertext Command Line Interface (HCLI) semantics.</doc>
+
+    <descriptor id="hcli-document">
+        <descriptor href="#hcli_version" />
+
+        <descriptor href="#name" />
+
+        <descriptor id="section" type="semantic">
+            <descriptor href="#name" />
+            <descriptor href="#description" />
+        </descriptor>
+
+        <descriptor href="#command"/>
+        <descriptor href="#option"/>
+        <descriptor href="#parameter"/>
+        <descriptor href="#safe-execution"/>
+        <descriptor href="#unsafe-execution"/>
+    </descriptor>
+
+    <descriptor id="command" type="semantic">
+        <doc>A resource for selecting a command.</doc>
+
+        <descriptor href="#safe-cli-item" />
+        <descriptor href="#hcli_version"/>
+        <descriptor href="#name" />
+        <descriptor href="#description" />
+    </descriptor>  
+
+    <descriptor id="option" type="semantic">
+        <doc>A resource for selecting an option.</doc>
+
+        <descriptor href="#safe-cli-item" />
+        <descriptor href="#hcli_version"/>
+        <descriptor href="#name" />
+        <descriptor href="#description" />
+    </descriptor> 
+
+    <descriptor id="parameter" type="semantic">
+        <descriptor href="#param-cli-item" type="safe"/>
+        <descriptor href="#hcli_version"/>        
+    </descriptor>
+
+    <descriptor id="safe-execution" type="semantic">
+        <doc>A resource for executing a safe command line.</doc>
+
+        <descriptor href="#execution-safe-cli-item" />
+    </descriptor>  
+
+    <descriptor id="unsafe-execution" type="semantic">
+        <doc>A resource for executing an unsafe command line.</doc>
+
+        <descriptor href="#execution-unsafe-cli-item" />
+    </descriptor>  
+
+    <descriptor id="safe-cli-item" name="item" type="safe">
+        <descriptor id="safe-cli" name="cli" type="safe" rt="#hcli-document" />
+    </descriptor>
+
+    <descriptor id="unsafe-cli-item" name="item" type="safe">
+        <descriptor id="unsafe-cli" name="cli" type="unsafe" rt="#hcli-document"/>
+    </descriptor>
+
+    <descriptor id="execution-safe-cli-item" name="item" type="safe">
+        <descriptor id="execution-safe-cli" name="cli" type="safe" />
+    </descriptor>
+
+    <descriptor id="execution-unsafe-cli-item" name="item" type="safe">
+        <descriptor id="execution-unsafe-cli" name="cli" type="unsafe" />
+    </descriptor>
+
+    <descriptor id="param-item" name="item" type="safe">
+        <doc>A resource for entering a parameter.</doc>
+
+        <descriptor id="param-cli-item" name="cli" type="safe" rt="#hcli-document">
+            <doc>A form to input a command line parameter.</doc>
+
+            <descriptor id="hcli_param" type="semantic">
+                <doc>Custom supplied input for a CLI execution.</doc>
+            </descriptor>
+        </descriptor>
+    </descriptor>
+
+    <descriptor id="hcli_version" type="semantic">
+        <doc>The version of the HCLI specification in use</doc>
+    </descriptor>
+
+    <descriptor id="name" type="semantic">
+        <doc>The name of the described command or option</doc>
+    </descriptor>
+
+    <descriptor id="description" type="semantic">    
+        <doc>The description of a named section, command, or option</doc>
+    </descriptor>
+</alps>
+
