@@ -1,0 +1,69 @@
+
+{
+  "alps" : {
+    "version" : "1.0",
+    "title" : "Credit Check Service for BigCo, Inc.",
+    "doc" : {
+      "value" : "Public API profile for BigCo's Credit Check service."
+    },
+    "descriptors" : [
+      { 
+        "id" : "ratingId", "type" : "semantic", "tags" : "property",
+        "ref" : "https://schema.org/identifier",
+        "text" : "The unique identifier for the rating record."
+      },
+      { 
+        "id" : "companyName", "type" : "semantic", "tags" : "property",
+        "ref" : "https://schema.org/legalName",
+        "text" : "Name of the company; used to look up the rating value"
+      },
+      { 
+        "id" : "dateRequested", "type" : "semantic", "tags" : "property",
+        "ref" : "https://schema.org/Date",
+        "text" : "Date/Time (UTC format) the rating record was created."
+      },
+      { 
+        "id" : "ratingValue", "type" : "semantic", "tags" : "property",
+        "ref" : "https://schema.org/ratingValue",
+        "text" : "Actual credit rating (value between 1 and 10 [0=unrated]"
+      },
+      
+      {
+        "id" : "ratingItem", "type" : "semantic", "tags" : "container",
+        "descriptors" : [
+          {"href" : "#ratingId"},
+          {"href" : "#companyName"},
+          {"href" : "#dateRequested"},
+          {"href" : "#ratingValue"}
+        ]
+      },
+
+      {
+        "id" : "home", "type" : "safe", "tags" : "actions",
+        "text" : "Root resource; Points to other actions in the service."
+      },
+      { 
+        "id" : "creditCheckForm", "type" : "safe", 
+        "tags" : "actions", "rtn" : "ratingItem",
+        "text" : "Returns the input form for making a credit-check request."
+      },
+      { 
+        "id" : "creditCheckHistory", "type" : "safe", 
+        "tags" : "actions", "rtn" : "ratingItem",
+        "text" : "Returns a list of past credit rating records.",
+        "descriptors" : [
+          {"href" : "#companyName"}
+        ]
+      },
+      { 
+        "id" : "creditCheckItem", "type" : "safe", 
+        "tags" : "actions", "rtn" : "ratingItem",
+        "text" : "Returns a single credit check record.",
+        "descriptors" : [
+          {"href" : "#ratingId"}
+        ]
+      }          
+    ]
+  }
+}
+

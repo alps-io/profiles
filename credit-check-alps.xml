@@ -1,0 +1,46 @@
+<alps version="1.0">
+  <title>Credit Check Service for BigCo, Inc.</title>
+  <doc>
+    Public API profile for BigCo's Credit Check service.
+  </doc>
+
+  <!-- properties -->
+  <descriptor id="ratingId" type="semantic" 
+    ref="https://schema.org/identifier"
+    text="The unique identifier for the rating record." />
+  <descriptor id="companyName" type="semantic"
+    ref="https://schema.org/legalName"
+    text="Name of the company; used to look up the rating value" />
+  <descriptor id="dateRequested" type="semantic"
+    ref="https://schema.org/Date"
+    text="Date/Time (UTC format) the rating record was created." />
+  <descriptor id="ratingValue" type="semantic"
+    ref="https://schema.org/ratingValue"
+    text="Actual credit rating (value between 1 and 10 [zero means unrated]" />
+    
+  <!-- containers -->
+  <descriptor id="ratingItem" type="semantic">
+    <descriptor href="#ratingId" />
+    <descriptor href="#companyName" />
+    <descriptor href="#dateRequested" />
+    <descriptor href="#ratingValue" />
+  </descriptor>  
+  
+  <!-- actions -->
+  <descriptor id="home" type="safe"
+    text="root resource; points to other resources/actions in the service" />
+
+  <descriptor id="creditCheckForm" type="safe" rtn="ratingItem"
+    text="Returns the input form for making a credit-check request" />
+
+  <descriptor id="creditCheckHistory" type="safe" rtn="ratingItem"
+    text="Returns a list of past credit rating records">
+    <descriptor href="#companyName" />
+  </descriptor>
+
+  <descriptor id="creditCheckItem" type="safe" rtn="ratingItem" 
+    text="returns a single credit check record">
+    <descriptor href="#ratingId" />
+  <descriptor>
+  
+</alps>
