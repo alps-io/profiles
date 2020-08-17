@@ -18,7 +18,7 @@
          - d is a fixed constant
          - P is an integer indicating the max number of "pips" or dots on a single side
     </doc>
-  </decriptor>
+  </descriptor>
   <descriptor id="sum" type="semantic">
     <doc>
       Sum total of adding the value of all the rolls of the die
@@ -38,7 +38,7 @@
     <descriptor href="#dice">
       <descriptor href="#sum" />
       <descriptor href="#rolls" />
-    </decriptor>
+    </descriptor>
   </descriptor>
   
   <!-- action elements -->
