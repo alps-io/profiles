@@ -1,0 +1,155 @@
+{
+  "alps": {
+    "version": "1.0",
+    "title": "onboardingAPI.wsd",
+    "doc": {
+      "type": "text",
+      "value": "ALPS document for onboardingAPI.wsd"
+    },
+    "descriptors": [
+      {
+        "id": "identifier",
+        "type": "semantic"
+      },
+      {
+        "id": "name",
+        "type": "semantic"
+      },
+      {
+        "id": "email",
+        "type": "semantic"
+      },
+      {
+        "id": "region",
+        "type": "semantic"
+      },
+      {
+        "id": "discount",
+        "type": "semantic"
+      },
+      {
+        "id": "home",
+        "type": "group"
+      },
+      {
+        "id": "WIP",
+        "type": "group"
+      },
+      {
+        "id": "customerData",
+        "type": "group"
+      },
+      {
+        "id": "accountData",
+        "type": "group"
+      },
+      {
+        "id": "finalizeWIP",
+        "type": "group"
+      },
+      {
+        "id": "cancelWIP",
+        "type": "group"
+      },
+      {
+        "id": "startOnboarding",
+        "type": "safe",
+        "rtn": "",
+        "descriptors": [
+          {
+            "href": "#identifier"
+          }
+        ]
+      },
+      {
+        "id": "collectCustomerData",
+        "type": "safe",
+        "rtn": "",
+        "descriptors": [
+          {
+            "href": "#identifier"
+          },
+          {
+            "href": "#name"
+          },
+          {
+            "href": "#email"
+          }
+        ]
+      },
+      {
+        "id": "saveToWIP",
+        "type": "unsafe",
+        "rtn": "",
+        "descriptors": [
+          {
+            "href": "#identifier"
+          },
+          {
+            "href": "#name"
+          },
+          {
+            "href": "#email"
+          }
+        ]
+      },
+      {
+        "id": "collectAccountData",
+        "type": "safe",
+        "rtn": "",
+        "descriptors": [
+          {
+            "href": "#identifier"
+          },
+          {
+            "href": "#region"
+          },
+          {
+            "href": "#discount"
+          }
+        ]
+      },
+      {
+        "id": "saveToWIP",
+        "type": "unsafe",
+        "rtn": "",
+        "descriptors": [
+          {
+            "href": "#identifier"
+          },
+          {
+            "href": "#region"
+          },
+          {
+            "href": "#discount"
+          }
+        ]
+      },
+      {
+        "id": "completeOnboarding",
+        "type": "unsafe",
+        "rtn": "",
+        "descriptors": [
+          {
+            "href": "#identifier"
+          }
+        ]
+      },
+      {
+        "id": "goHome",
+        "type": "safe",
+        "rtn": ""
+      },
+      {
+        "id": "abandonOnboarding",
+        "type": "unsafe",
+        "rtn": "",
+        "descriptors": [
+          {
+            "href": "#identifier"
+          }
+        ]
+      }
+    ]
+  }
+}
