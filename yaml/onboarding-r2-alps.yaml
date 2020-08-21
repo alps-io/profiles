@@ -1,0 +1,141 @@
+alps:
+  version: '1.0'
+  description: ALPS document for BigCo Onboarding-R2 API
+  
+  descriptors:
+    - id: home
+      type: safe
+      returns: '#onboarding'
+  
+    - id: listOnboardings
+      type: safe
+      returns: '#activity'
+  
+    - id: filterOnboardings
+      type: safe
+      returns: '#onboarding'
+      descriptors:
+        - href: '#status'
+  
+    - id: readOnboarding
+      type: safe
+      returns: '#onboarding'
+      descriptors:
+        - href: '#id'
+  
+    - id: createOnboarding
+      type: unsafe
+      returns: '#onboarding'
+      descriptors:
+        - href: '#id'
+        - href: '#status'
+  
+    - id: addCompanyInfo
+      type: idempotent
+      returns: '#onboarding'
+      descriptors:
+        - href: '#id'
+        - href: '#companyId'
+        - href: '#companyName'
+        - href: '#streetAddress'
+        - href: '#city'
+        - href: '#stateProvince'
+        - href: '#postalCode'
+        - href: '#telephone'
+        - href: '#email'
+  
+    - id: addAccountInfo
+      type: idempotent
+      returns: '#onboarding'
+      descriptors:
+        - href: '#id'
+        - href: '#accountId'
+        - href: '#division'
+        - href: '#companyId'
+        - href: '#spendingLimit'
+        - href: '#discountPercentage'
+  
+    - id: addActivityInfo
+      type: idempotent
+      returns: '#onboarding'
+      descriptors:
+        - href: '#id'
+        - href: '#activityId'
+        - href: '#activityType'
+        - href: '#companyId'
+        - href: '#accountId'
+        - href: '#dateScheduled'
+        - href: '#notes'
+
+    - id: addCreditCheckInfo
+      type: idempotent
+      returns: '#onboarding'
+      descriptors:
+        - href: '#id'
+        - href: '#ratingValue'
+
+    - id: approveOnboarding
+      type: idemponent
+      returns: '#onboarding'
+      descriptors:
+        - href: '#id'
+        - href: '#status'
+  
+    - id: rejectOnboarding
+      type: idemponent
+      returns: '#onboarding'
+      descriptors:
+        - href: '#id'
+        - href: '#status'
+  
+    - id: onboarding
+      type: semantic
+      descriptors:
+        - href: id
+          type: semantic
+        - href: companyId
+          type: semantic
+        - href: companyName
+          type: semantic
+        - href: streetAddress
+          type: semantic
+        - href: city
+          type: semantic
+        - href: stateProvince
+          type: semantic
+        - href: postalCode
+          type: semantic
+        - href: country
+          type: semantic
+        - href: telephone
+          type: semantic
+        - href: email
+          type: semantic
+        - href: accountId
+          type: semantic
+        - href: division
+          type: semantic
+          text: 'DryGoods, Hardware, Software, Grocery, Pharmacy, Military'
+        - href: spendingLimit
+          type: semantic
+        - href: discountPercentage
+          type: semantic
+        - href: activityId
+          type: semantic
+        - href: activityType
+          type: semantic
+          text: 'email, inperson, phone, letter'
+        - href: dateScheduled
+          type: semantic
+        - href: notes
+          type: semantic
+        - href: status
+          type: semantic
+          text: 'suspended, pending, active, closed'
+        - href: ratingValue
+          type: semantic
+        - href: dateCreated
+          type: semantic
+        - href: dateUpdated
+          type: semantic
+
