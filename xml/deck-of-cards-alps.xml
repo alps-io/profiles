@@ -37,7 +37,7 @@
     </doc>
     <descriptor href="#success" />
     <descriptor href="#deck_id" />
-    <descriptpr href="#remaining" />
+    <descriptor href="#remaining" />
   </descriptor>
   
   <descriptor id="card" type="semantic">

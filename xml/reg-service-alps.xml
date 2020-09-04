@@ -45,7 +45,7 @@
     <descriptor href="#home" />
     <descriptor href="#index" />
     <descriptor href="#ping" />
-    <descriptpr href="#register" />
+    <descriptor href="#register" />
     <descriptor href="#deregister" />
     <descriptor href="#update" />
     <descriptor href="#read" />
