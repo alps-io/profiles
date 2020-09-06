@@ -1,0 +1,40 @@
+<alps>
+  <doc format="html">
+    <h1>ALPS Search</h1>
+    <p>ALPS search w/ varying network promises for the same named action.</p>
+  </doc>
+  <doc format="markdown">
+    ## ALPS Search
+
+    ALPS search w/ varying network promises for the same named action.
+  </doc>
+  <doc format="text">
+    ALPS Search
+    ===========
+
+    ALPS search w/ varying network promises for the same named action.
+  </doc>
+  
+  <!-- data -->
+  <descriptor id="text" type="semantic" />
+  <descriptor id="url" type="semantic" />
+  
+  <!-- actions -->
+  <descriptor id="form" name="search" type="safe" rt="results">
+    <descriptor href="#text" name="value"/>
+  </descriptor>
+  
+  <descriptor id="link" name="search" type="safe">
+    <descriptor href="#url" name="search-url"/>
+  </descriptor>
+
+  <descriptor id="save" name="search" type="unsafe">
+    <descriptor href="#url" name="results-url"/>
+  </descriptor>
+
+  <descriptor id="results">
+    <descriptor href="#text" name="results-content"/>
+    <descriptor href="#url" name="results-url"/>
+  </descriptor>
+  
+</alps>

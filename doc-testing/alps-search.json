@@ -1,0 +1,74 @@
+
+{
+    "alps": {
+        "version": "1.0",
+        "doc": [
+            {
+                "format": "html",
+                "value": "ALPS Search\n    ALPS search w/ varying network promises for the same named action."
+            },
+            {
+                "format": "markdown",
+                "value": "## ALPS Search\n\n    ALPS search w/ varying network promises for the same named action."
+            },
+            "ALPS Search\n    ===========\n\n    ALPS search w/ varying network promises for the same named action."
+        ],
+        "descriptor": [
+            {
+                "id": "text",
+                "type": "semantic"
+            },
+            {
+                "id": "url",
+                "type": "semantic"
+            },
+            {
+                "id": "form",
+                "type": "safe",
+                "name": "search",
+                "rt": "results",
+                "descriptor": {
+                    "type": "semantic",
+                    "href": "#text",
+                    "name": "value"
+                }
+            },
+            {
+                "id": "link",
+                "type": "safe",
+                "name": "search",
+                "descriptor": {
+                    "type": "semantic",
+                    "href": "#url",
+                    "name": "search-url"
+                }
+            },
+            {
+                "id": "save",
+                "type": "unsafe",
+                "name": "search",
+                "descriptor": {
+                    "type": "semantic",
+                    "href": "#url",
+                    "name": "results-url"
+                }
+            },
+            {
+                "id": "results",
+                "type": "semantic",
+                "descriptor": [
+                    {
+                        "type": "semantic",
+                        "href": "#text",
+                        "name": "results-content"
+                    },
+                    {
+                        "type": "semantic",
+                        "href": "#url",
+                        "name": "results-url"
+                    }
+                ]
+            }
+        ]
+    }
+}

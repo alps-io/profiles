@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alps version="1.0">
+    <doc format="text">ALPS document for BigCo Company API</doc>
+
+    <ext id="root" 
+      name="root"
+      type="metadata"
+      tags="oas"
+      value="http://api.example.org/company"
+    />
+    <ext id="title" 
+      name="title"
+      type="metadata"
+      tags="oas"    
+      value="Company API"
+    />
+    <ext id="id" 
+      name="id"
+      type="metadata"
+      tags="oas"    
+      value="http://alps.io/profiles/mamund/company"
+    />
+
+    <descriptor id="dateCreated" type="semantic"/>
+    <descriptor id="home" type="safe" rt="#company"/>
+    <descriptor id="postalCode" type="semantic"/>
+    <descriptor id="telephone" type="semantic"/>
+    <descriptor id="id" type="semantic"/>
+    <descriptor id="addressCountry" type="semantic"/>
+    <descriptor id="locality" type="semantic"/>
+    <descriptor id="email" type="semantic"/>
+    <descriptor id="listCompanies" type="safe" rt="#company"/>
+    <descriptor id="addressRegion" type="semantic"/>
+    <descriptor id="status" type="semantic"/>
+    <descriptor id="legalName" type="semantic"/>
+    <descriptor id="dateUpdated" type="semantic"/>
+    <descriptor id="streetAddress" type="semantic"/>
+
+    <descriptor id="company" type="group">
+        <descriptor href="#legalName" type="semantic"/>
+        <descriptor href="#locality" type="semantic"/>
+        <descriptor href="#postalCode" type="semantic"/>
+        <descriptor href="#accressCountry" type="semantic"/>
+        <descriptor href="#dateCreated" type="semantic"/>
+        <descriptor href="#addressRegion" type="semantic"/>
+        <descriptor href="#email" type="semantic"/>
+        <descriptor href="#status" type="semantic"/>
+        <descriptor href="#dateUpdated" type="semantic"/>
+        <descriptor href="#id" type="semantic"/>
+        <descriptor href="#telephone" type="semantic"/>
+        <descriptor href="#streetAddress" type="semantic"/>
+    </descriptor>
+
+    <descriptor id="filterCompanies" type="safe" rt="#company">
+        <descriptor href="#legalName" type="semantic"/>
+        <descriptor href="#locality" type="semantic"/>
+        <descriptor href="#addressCountry" type="semantic"/>
+        <descriptor href="#status" type="semantic"/>
+    </descriptor>
+
+    <descriptor id="readCompany" type="safe" rt="#company">
+        <descriptor href="#id" type="semantic"/>
+    </descriptor>
+
+    <descriptor id="createCompany" type="unsafe" rt="#company">
+        <descriptor href="#streetAddress" type="semantic"/>
+        <descriptor href="#status" type="semantic"/>
+        <descriptor href="#addressRegion" type="semantic"/>
+        <descriptor href="#postalCode" type="semantic"/>
+        <descriptor href="#locality" type="semantic"/>
+        <descriptor href="#id" type="semantic"/>
+        <descriptor href="#telephone" type="semantic"/>
+        <descriptor href="#email" type="semantic"/>
+        <descriptor href="#legalName" type="semantic"/>
+    </descriptor>
+
+    <descriptor id="updateCompany" type="idempotent" rt="#company">
+        <descriptor href="#locality" type="semantic"/>
+        <descriptor href="#addressRegion" type="semantic"/>
+        <descriptor href="#postalCode" type="semantic"/>
+        <descriptor href="#id" type="semantic"/>
+        <descriptor href="#status" type="semantic"/>
+        <descriptor href="#telephone" type="semantic"/>
+        <descriptor href="#legalName" type="semantic"/>
+        <descriptor href="#streetAddress" type="semantic"/>
+        <descriptor href="#email" type="semantic"/>
+    </descriptor>
+
+    <descriptor id="removeCompany" type="idempotent" rt="#company">
+        <descriptor href="#id" type="semantic"/>
+    </descriptor>
+
+</alps>
