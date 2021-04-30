@@ -12,10 +12,10 @@
   </doc>
   
   <!-- ontology elements -->
-  <descriptor id="title"    type="semantic" />
-  <descriptor id="dueDate"  type="semantic" />
-  <descriptor id="category" type="semantic" />
-  <descriptor id="owner"    type="semantic" />
+  <descriptor id="title"    type="semantic" tag="ontology"/>
+  <descriptor id="dueDate"  type="semantic" tag="ontology" />
+  <descriptor id="category" type="semantic" tag="ontology" />
+  <descriptor id="owner"    type="semantic" tag="ontology" />
 
   <!-- taxonomy elements -->
   <descriptor id="todoItem" type="semantic" tag="taxonomy">
@@ -32,11 +32,11 @@
   </descriptor>    
     
   <!-- choreography elements -->
-  <descriptor id="list"   type="safe" rt="#todoItem" />
-  <descriptor id="search" type="safe" rt="#todoItem"/>
-  <descriptor id="create" type="unsafe" rt="#todoItem"/>
-  <descriptor id="update" type="idempotent" rt="#todoItem"/>
-  <descriptor id="close"  type="unsafe" rt="#todoItem"/>
-  <descriptor id="remove" type="idempotent" rt="#todoItem"/>
+  <descriptor id="list"   type="safe" rt="#todoItem" tag="choreography"/>
+  <descriptor id="search" type="safe" rt="#todoItem" tag="choreography"/>
+  <descriptor id="create" type="unsafe" rt="#todoItem" tag="choreography"/>
+  <descriptor id="update" type="idempotent" rt="#todoItem" tag="choreography"/>
+  <descriptor id="close"  type="unsafe" rt="#todoItem" tag="choreography"/>
+  <descriptor id="remove" type="idempotent" rt="#todoItem" tag="choreography"/>
     
 </alps>
