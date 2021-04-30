@@ -20,8 +20,6 @@
     title="free-form string identifying the category of the TODO item"/>
   <descriptor id="owner"    type="semantic" tag="ontology" 
     title="free-form string identifying the owner (person) of the TODO item"/>
-  <descriptor id="status"    type="semantic" tag="ontology" 
-    title="status of the TODO item (open or closed, defaults to open)"/>
 
   <!-- taxonomy elements -->
   <descriptor id="todoItem" type="semantic" tag="taxonomy">
@@ -50,10 +48,7 @@
     title="updates an existing TODO item (using dueDate, category and owner)"
     rt="#todoItem" tag="choreography"/>
   <descriptor id="close"  type="unsafe" rel="item todo" 
-    title="marks an existing TODO item status as 'closed'"
-    rt="#todoItem" tag="choreography"/>
-  <descriptor id="remove" type="idempotent" rel="item todo" 
-    title="removes an existing TODO item from the list"
-    rt="#todoItem" tag="choreography"/>
+    title="marks an existing item status as 'closed' rt="#todoItem" tag="choreography"/>
+  <descriptor id="remove" type="idempotent" rel="item todo" rt="#todoItem" tag="choreography"/>
     
 </alps>
