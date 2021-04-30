@@ -12,10 +12,14 @@
   </doc>
   
   <!-- ontology elements -->
-  <descriptor id="title"    type="semantic" tag="ontology"/>
-  <descriptor id="dueDate"  type="semantic" tag="ontology" />
-  <descriptor id="category" type="semantic" tag="ontology" />
-  <descriptor id="owner"    type="semantic" tag="ontology" />
+  <descriptor id="title"    type="semantic" tag="ontology"
+    title="title of the TODO item"/>
+  <descriptor id="dueDate"  type="semantic" tag="ontology" 
+    title="dueDate (ISO format) of the TODO item"/>
+  <descriptor id="category" type="semantic" tag="ontology" 
+    title="free-form string identifying the category of the TODO item"/>
+  <descriptor id="owner"    type="semantic" tag="ontology" 
+    title="free-form string identifying the owner (person) of the TODO item"/>
 
   <!-- taxonomy elements -->
   <descriptor id="todoItem" type="semantic" tag="taxonomy">
