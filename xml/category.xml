@@ -12,10 +12,10 @@
   <descriptor id="category" type="semantic" />
 
   <!-- tranistion elements -->
-  <descriptor id="list" type="safe" />
-  <descriptor id="search" type="safe" />
-  <descriptor id="create" type="unsafe" />
-  <descriptor id="update" type="idempotent" />
-  <descriptor id="remove" type="idempotent" />
+  <descriptor id="list" type="safe" rt="#category"/>
+  <descriptor id="search" type="safe" rt="#category"/>
+  <descriptor id="create" type="unsafe" rt="#category"/>
+  <descriptor id="update" type="idempotent" rt="#category" />
+  <descriptor id="remove" type="idempotent" rt="#category"/>
 
 </alps>

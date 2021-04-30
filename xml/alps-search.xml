@@ -6,7 +6,7 @@
   <descriptor id="url" type="semantic" />
   
   <!-- actions -->
-  <descriptor id="form" name="search" type="safe" rt="results">
+  <descriptor id="form" name="search" type="safe" rt="#results">
     <descriptor href="#text" name="value"/>
   </descriptor>
   

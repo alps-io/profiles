@@ -11,18 +11,26 @@
       servers MAY NOT support all the semantic descriptors listed here.
   </doc>
   
-  <!-- data elements -->
+  <!-- ontology elements -->
   <descriptor id="title"    type="semantic" />
   <descriptor id="dueDate"  type="semantic" />
   <descriptor id="category" type="semantic" />
   <descriptor id="owner"    type="semantic" />
-  
-  <!-- transition elements -->
-  <descriptor id="list"   type="safe" />
-  <descriptor id="search" type="safe" />
-  <descriptor id="create" type="unsafe" />
-  <descriptor id="update" type="idempotent" />
-  <descriptor id="close"  type="unsafe" />
-  <descriptor id="remove" type="idempotent" />
+
+  <!-- taxonomy elements -->
+  <descriptor id="todoItem" type="semantic" tag="taxonomy">
+    <descriptor href="#title" />
+    <descriptor href="#dueDate" />
+    <descriptor href="#category" />
+    <descriptor href="#owner" />
+  </descriptor>    
+    
+  <!-- choreography elements -->
+  <descriptor id="list"   type="safe" rt="#todoItem" />
+  <descriptor id="search" type="safe" rt="#todoItem"/>
+  <descriptor id="create" type="unsafe" rt="#todoItem"/>
+  <descriptor id="update" type="idempotent" rt="#todoItem"/>
+  <descriptor id="close"  type="unsafe" rt="#todoItem"/>
+  <descriptor id="remove" type="idempotent" rt="#todoItem"/>
     
 </alps>
