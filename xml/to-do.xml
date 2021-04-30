@@ -23,6 +23,12 @@
     <descriptor href="#dueDate" />
     <descriptor href="#category" />
     <descriptor href="#owner" />
+    <descriptor href="#list" />
+    <descriptor href="#search" />
+    <descriptor href="#create" />
+    <descriptor href="#update" />
+    <descriptor href="#close" />
+    <descriptor href="#remove" />
   </descriptor>    
     
   <!-- choreography elements -->
