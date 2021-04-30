@@ -37,6 +37,6 @@
   <descriptor id="create" type="unsafe" rel="item todo" rt="#todoItem" tag="choreography"/>
   <descriptor id="update" type="idempotent" rel="item todo" rt="#todoItem" tag="choreography"/>
   <descriptor id="close"  type="unsafe" rel="item todo" rt="#todoItem" tag="choreography"/>
-  <descriptor id="remove" type="idempotent" rel="item todo" rt="#todoItem" tag="choreography"/>
+  <descriptor id="remove" type="idempotent" rel="collection todo" rt="#todoItem" tag="choreography"/>
     
 </alps>
