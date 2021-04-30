@@ -29,6 +29,7 @@
     <descriptor href="#dueDate" />
     <descriptor href="#category" />
     <descriptor href="#owner" />
+    <descriptor href="#status" />
     <descriptor href="#list" />
     <descriptor href="#search" />
     <descriptor href="#create" />
